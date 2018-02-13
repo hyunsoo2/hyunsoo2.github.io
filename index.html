@@ -1,0 +1,182 @@
+{
+  "startingRoom": "AcrossTheCastle",
+  "endingRoom": "TopOfTheCastle",
+  "player": {
+    "name": "CS Kid",
+    "attack": 10.0,
+    "defense": 35.0,
+    "health": 100.0,
+    "level": 0
+  },
+  "monsters": [
+    {
+      "name": "vampire",
+      "attack": 5.0,
+      "defense": 5.0,
+      "health": 20.0
+    },
+    {
+      "name": "zombie",
+      "attack": 2.5,
+      "defense": 100.0,
+      "health": 10.0
+    },
+    {
+      "name": "dragon",
+      "attack": 130,
+      "defense": 50.0,
+      "health": 300.0
+    },
+    {
+      "name": "Johnny",
+      "attack": 13000,
+      "defense": 5000,
+      "health": 30000
+    }
+  ],
+  "rooms": [
+    {
+      "name": "AcrossTheCastle",
+      "description": "You are outside of the Magical Castle that is surrounded by water",
+      "items": [
+        {
+          "name": "wet gun",
+          "damage": 10
+        },
+        {
+          "name": "gun",
+          "damage": 20
+        }
+      ],
+      "monstersInRoom": ["vampire", "dragon"],
+      "directions": [
+        {
+          "directionName": "North",
+          "room": "CastleEntrance"
+        }
+      ],
+      "actions": ["swim"]
+    },
+    {
+      "name": "CastleEntrance",
+      "description": "You are in front of the entry of the Castle.  You see a stone road in a beautiful pattern.",
+      "items": [
+        {
+          "name": "rusty sword",
+          "damage": 5
+        }
+      ],
+      "monstersInRoom": ["zombie", "vampire"],
+      "directions": [
+        {
+          "directionName": "North",
+          "room": "MainHall"
+        },
+        {
+          "directionName": "South",
+          "room": "AcrossTheCastle"
+        }
+      ],
+      "actions": ["skip"]
+    },
+    {
+      "name": "MainHall",
+      "description": "You are in the main hall of the Castle.  There are lots of guards standing in the hall.",
+      "items": [
+        {
+          "name": "excalibur",
+          "damage": 30
+        }
+      ],
+      "directions": [
+        {
+          "directionName": "South",
+          "room": "CastleEntrance"
+        },
+        {
+          "directionName": "West",
+          "room": "Attic"
+        },
+        {
+          "directionName": "North",
+          "room": "SwimmingPool"
+        }
+      ]
+    },
+    {
+      "name": "SwimmingPool",
+      "description": "You are in the swimming pool.  You see a zombie enjoying the water.",
+      "monstersInRoom": ["zombie"],
+      "directions": [
+        {
+          "directionName": "South",
+          "room": "MainHall"
+        }
+      ],
+      "actions": ["swim"]
+    },
+    {
+      "name": "Attic",
+      "description": "You are in the attic.  There seems to be magical items.",
+      "items": [
+        {
+          "name": "magic wand",
+          "damage": 20
+        }
+      ],
+      "directions": [
+        {
+          "directionName": "West",
+          "room": "CastleWestHallway"
+        }
+      ]
+    },
+    {
+      "name": "CastleWestHallway",
+      "description": "You are in the west hallway.  You can see the attic and a suspicious room.",
+      "directions": [
+        {
+          "directionName": "East",
+          "room": "Attic"
+        },
+        {
+          "directionName": "South",
+          "room": "SuspiciousRoom"
+        }
+      ],
+      "actions": ["go"]
+    },
+    {
+      "name": "SuspiciousRoom",
+      "description": "You are in a suspicious room.  It seems like the Castle is hiding something.",
+      "monstersInRoom": ["Johnny"],
+      "items": [
+        {
+          "name": "machine gun",
+          "damage": 50
+        }
+      ],
+      "directions": [
+        {
+          "directionName": "Up",
+          "room": "TopOfTheCastle"
+        },
+        {
+          "directionName": "North",
+          "room": "CastleWestHallway"
+        }
+      ],
+      "actions": ["go", "run"]
+    },
+    {
+      "name": "TopOfTheCastle",
+      "description": "You are at the top of the Castle.  You have conquered it!",
+      "directions": [
+        {
+          "directionName": "Down",
+          "room": "SuspiciousRoom"
+        }
+      ]
+    }
+  ]
+}
